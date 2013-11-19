@@ -62,6 +62,14 @@ public class DataStoreManager {
 		ret.setProperty("idliga", s.getIdliga());
 		return ret;
 	}
+	
+	public static Entity UserToEntity(User s){
+		Entity ret = new Entity("User");
+		ret.setProperty("username", s.getUsername());
+		ret.setProperty("email", s.getEmail());
+		ret.setProperty("password", s.getPassword());
+		return ret;
+	}
 
 	public static Entity searchEntity( String EntityType, String property, Object value, DatastoreService datastore, HttpServletResponse res ) throws IOException{
 		Entity ret = null;
@@ -138,6 +146,26 @@ public class DataStoreManager {
 		}
 		return ret;
 	}
+	
+	public static List<User> getUsers(DatastoreService datastore, HttpServletResponse res ) throws IOException{
+		List<User> ret = new ArrayList<>();
+		try{
+			Query q = new Query("User");
+			PreparedQuery pq = datastore.prepare(q);
+			Iterator<Entity> it = pq.asIterator();
+			while(it.hasNext()){
+				Entity eaux = it.next();
+				if(eaux != null){
+					User saux = DataStoreManager.entityToUser(eaux);
+					ret.add(saux);
+				}
+			}
+		}catch(Exception ex){
+			res.sendError(res.SC_BAD_REQUEST, "Please rewrite your request" + ex.getMessage());
+		}
+		return ret;
+	}
+	
 	public static Team entityToTeam(Entity e){
 		Team ret = new Team((String) e.getProperty("name"),(String) e.getProperty("location"),
 				(String) e.getProperty("gamehour"),(String) e.getProperty("gameday"),
@@ -151,6 +179,11 @@ public class DataStoreManager {
 	public static Group entityToGroup (Entity e){
 		return new Group( (String) e.getProperty("name"), (Integer)(int)(long) e.getProperty("id"),(String) e.getProperty("idliga"));
 	}
+	
+	public static User entityToUser (Entity e){
+		return new User( (String) e.getProperty("username"), (String) e.getProperty("email"),(String) e.getProperty("password"));
+	}
+	
 	public static Entity updateTeam(Entity aux, Entity saux){
 		aux.setProperty("name", saux.getProperty("name"));
 		aux.setProperty("location", saux.getProperty("location"));
@@ -170,6 +203,13 @@ public class DataStoreManager {
 		aux.setProperty("name", saux.getProperty("name"));
 		aux.setProperty("id", saux.getProperty("id"));
 		aux.setProperty("idliga", saux.getProperty("idliga"));
+		return aux;
+	}
+	
+	public static Entity updateUser(Entity aux, Entity saux){
+		aux.setProperty("username", saux.getProperty("username"));
+		aux.setProperty("email", saux.getProperty("email"));
+		aux.setProperty("password", saux.getProperty("password"));
 		return aux;
 	}
 }

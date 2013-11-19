@@ -26,6 +26,15 @@
   </servlet>
   
   <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/api/v1/user/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.UserServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
     <servlet-name>GroupServlet</servlet-name>
     <url-pattern>/api/v1/group/*</url-pattern>
   </servlet-mapping>
