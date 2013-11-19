@@ -1,0 +1,2 @@
+serviceClass: com.webartweb.sporttravelgraph.client.GreetingService
+path: 65714F7681D6D199C90051B967BB9B86.gwt.rpc

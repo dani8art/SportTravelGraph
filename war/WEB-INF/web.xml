@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/sporttravelgraph/greet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>LeagueServlet</servlet-name>
+    <url-pattern>/api/v1/league/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LeagueServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.LeagueServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GroupServlet</servlet-name>
+    <url-pattern>/api/v1/group/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GroupServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.GroupServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>TeamServlet</servlet-name>
+    <url-pattern>/api/v1/team/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TeamServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.TeamServlet</servlet-class>
+  </servlet>
+   
+  <servlet>
+    <servlet-name>GEOcode</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.GeoCodeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GEOcode</servlet-name>
+    <url-pattern>/api/v1/geo/*</url-pattern>
+  </servlet-mapping>
+    
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>SportTravelGraph.html</welcome-file>
+  </welcome-file-list>
+  
+
+</web-app>
