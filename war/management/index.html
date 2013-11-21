@@ -21,11 +21,29 @@
 	 				<li ><a href="league.html">Leagues</a></li>
 	 				<li ><a href="group.html">Groups</a></li>
 	 				<li ><a href="team.html">Teams</a></li>
-	 				<li><a href="../SportTravelGraph.html">Go to app</a>
+	 				<li  ><a href="user.html">Users</a></li>
+	 				<li><a href="../SportTravelGraph.html">Go to app</a></li>
 	 			</ul>
 	 		</div>
 	 		<div class="row" id="row1">
 	 			<div class="col-md-6">
+	 				<h4 class="addtitle">Add League</h4>
+	 				<form action="" class="form-horizontal" id="league-management-form">
+	 					<div class="form-group">
+    						<label for="name" class="col-md-3 control-label">Name</label>
+    						<div class="col-md-8">
+      							<input type="text" class="form-control" id="name" placeholder="Name">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<div class="col-md-2 col-md-offset-5">
+      							<button type="submit" class="btn btn-primary btn-block">Save</button>
+    						</div>
+    						<div class="col-md-4">
+      							<a href="league.html" class="btn btn-success btn-block">More management</a>
+    						</div>
+  						</div>
+	 				</form>
 	 				<h4 class="addtitle">Add Team</h4>
 	 				<form action="" class="form-horizontal" id="team-management-form">
 	 					<div class="form-group">
@@ -83,23 +101,6 @@
 	 				</form>
 	 			</div>
 	 			<div class="col-md-6">
-	 				<h4 class="addtitle">Add League</h4>
-	 				<form action="" class="form-horizontal" id="league-management-form">
-	 					<div class="form-group">
-    						<label for="name" class="col-md-3 control-label">Name</label>
-    						<div class="col-md-8">
-      							<input type="text" class="form-control" id="name" placeholder="Name">
-    						</div>
-  						</div>
-  						<div class="form-group">
-    						<div class="col-md-2 col-md-offset-5">
-      							<button type="submit" class="btn btn-primary btn-block">Save</button>
-    						</div>
-    						<div class="col-md-4">
-      							<a href="league.html" class="btn btn-success btn-block">More management</a>
-    						</div>
-  						</div>
-	 				</form>
 	 				<h4 class="addtitle">Add Group</h4>
 	 				<form action=""  class="form-horizontal" id="group-management-form">
 	 					<div class="form-group">
@@ -122,6 +123,41 @@
     						</div>
     						<div class="col-md-4">
       							<a href="group.html" class="btn btn-success btn-block">More management</a>
+    						</div>
+  						</div>
+  					</form>
+  					<h4 class="addtitle">Add User</h4>
+	 				<form action=""  class="form-horizontal" id="user-management-form">
+	 					<div class="form-group">
+    						<label for="username" class="col-md-3 control-label">Username</label>
+    						<div class="col-md-8">
+      							<input type="text" class="form-control" id="username" placeholder="Username">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<label for="email" class="col-md-3 control-label">Email</label>
+    						<div class="col-md-8">
+      							<input type="email" class="form-control" id="email" placeholder="Email">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<label for="password" class="col-md-3 control-label">Password</label>
+    						<div class="col-md-8">
+      							<input type="password" class="form-control" id="password" placeholder="Password">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<label for="re_password" class="col-md-3 control-label">Re-password</label>
+    						<div class="col-md-8">
+      							<input type="password" class="form-control" id="re_password" placeholder="Re-password">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<div class="col-md-2 col-md-offset-5">
+      							<button type="submit" class="btn btn-primary btn-block">Save</button>
+    						</div>
+    						<div class="col-md-4">
+      							<a href="user.html" class="btn btn-success btn-block">More management</a>
     						</div>
   						</div>
   					</form>

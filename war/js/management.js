@@ -91,6 +91,36 @@ $(document).ready(function(){
 		});	
 		return false;
 	});
+	$("#user-management-form").on("submit", function(){
+		var password = $(this).find("#password").val();
+		var re_password = $(this).find("#re_password").val();
+		if(password == re_password){
+			var username = $(this).find("#username").val();
+			var email = $(this).find("#email").val();
+			
+			var user = new Object();
+			user.username = username;	
+			user.email = email;
+			user.password = password;
+			json = JSON.stringify(user);
+			
+			var postuser = $.ajax({
+				url: "../api/v1/user",
+				type: "POST",
+				data: json
+			});
+			postuser.done(function(data, status, jqXHR){
+				if(jqXHR.status == 200){
+					actLeagues();
+					actGroup();
+					actInput();
+				}
+			});
+		}else{
+			alert("Las password no coinciden.");
+		}
+		return false;
+	});
 });
 function actInput(){
 	$('input').val("");
