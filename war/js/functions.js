@@ -31,13 +31,16 @@ $(document).ready(function(){
 });
 function paintTeam(){
 	clearMarket();
+	
 	for (team in teams){
 		var coord = teams[team].location.split(";");
 		var myLatlng = new google.maps.LatLng(coord[0],coord[1]);
 		var marker = new google.maps.Marker({
 			position: myLatlng,
 			map: map,
-			title:"Hello World!"
+			animation: google.maps.Animation.DROP,
+			//icon: image,
+			title:"Hacer 'click' para ver información"
 		});
 		markerArray.push(marker);
 	}	

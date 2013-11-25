@@ -6,3 +6,12 @@
 #data_charge{
 	/*display:none;*/
 }
+#arrow{
+	background-image: url("../img/flecha_roja.png");
+	position:absolute;
+	top: 50px;
+	left: 160px;
+	z-index: 3000;
+	width: 48px;
+	height: 48px;
+}
