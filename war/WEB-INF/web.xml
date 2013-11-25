@@ -25,6 +25,33 @@
     <servlet-class>com.webartweb.sporttravelgraph.server.LeagueServlet</servlet-class>
   </servlet>
   
+   <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/api/v1/login/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.LoginServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/api/v1/logout/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.LogoutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/api/v1/user/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.webartweb.sporttravelgraph.server.UserServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>GroupServlet</servlet-name>
     <url-pattern>/api/v1/group/*</url-pattern>

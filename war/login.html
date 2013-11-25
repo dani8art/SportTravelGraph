@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Login | Sport Travel Graph</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/style-login.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/isloged.js"></script>		
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/functions-login.js"></script>
+		
+	
+	</head>
+	<body class="body-login" onload="isLoged()">
+		<div class="container">
+			<form class="form-signin login" action="api/v1/login" method="post">
+        		<h2 class="form-signin-heading text-center">Sport Travel Graph</h2>
+        		<input type="text" class="form-control" name="user" placeholder="Username" autofocus="" autocomplete="off">
+        		<input type="password" class="form-control" name="password" placeholder="Password">
+       			<label class="checkbox">
+          			<input type="checkbox" name="remember" value="remember-me"> Recordar datos
+        		</label>
+        		<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        		<a href="#" class="btn btn-lg btn-success btn-block">Registrarse</a>
+      					
+      			<p class="text-center" style="margin-top: 20px;">
+      			<a href="">Contacto | </a><a href="">Politicas de uso | </a><a href="">Manual | </a><a href="sporttravelgraph.html">Ir a App</a></p>    						
+      					
+      			<p class="text-center" ><a href="http://webartweb.com">&copy; webartweb.com</a></p>
+      		</form>
+      		<div class="login">
+      					
+      		</div>
+		</div>
+	</body>
+</html>
