@@ -11,9 +11,10 @@
 		<!-- JavaScript -->
 		<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-		
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/isloged.js"></script>
 	</head>
-	<body>
+	<body onload="isLoged()">
 	 	<div class="container">
 	 		<div class="row" id="menu">
 	 			<ul class="nav nav-pills nav-justified">
@@ -22,6 +23,7 @@
 	 				<li class="active" ><a href="group.html">Groups</a></li>
 	 				<li ><a href="team.html">Teams</a></li>
 	 				<li ><a href="user.html">Users</a></li>
+	 				<li ><a id="logout" href="#">Logout</a></li>
 	 				<li><a href="../SportTravelGraph.html">Go to app</a></li>
 	 			</ul>
 	 		</div>
