@@ -40,10 +40,24 @@ function paintTeam(){
 			map: map,
 			animation: google.maps.Animation.DROP,
 			//icon: image,
-			title:"Hacer 'click' para ver información"
+			title:"Hacer 'click' para ver información",
+			id_click: teams[team].name.toLowerCase().replace(/\s/g,'')
 		});
+
+		createDivTeam(teams[team]);
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			var id = marker.title;
+		    $('#'+id).removeClass("hidden");
+		});
+		
 		markerArray.push(marker);
 	}	
+}
+
+function createDivTeam (team){
+	var div = $('<div id = "'+team.name.toLowerCase().replace(/\s/g,'')+'" class="hidden div-info"></div>');
+	$('body').append(div);
 }
 function actTeam(){
 	var idliga = $("#league_select option:selected").attr("value");
