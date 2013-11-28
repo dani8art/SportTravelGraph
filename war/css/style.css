@@ -6,3 +6,8 @@
 #data_charge{
 	/*display:none;*/
 }
+#div-info{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
