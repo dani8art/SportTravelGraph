@@ -41,23 +41,52 @@ function paintTeam(){
 			animation: google.maps.Animation.DROP,
 			//icon: image,
 			title:"Hacer 'click' para ver información",
-			id_click: teams[team].name.toLowerCase().replace(/\s/g,'')
+			team: teams[team]
 		});
 
 		createDivTeam(teams[team]);
 		
-		google.maps.event.addListener(marker, 'click', function() {
-			var id = marker.title;
-		    $('#'+id).removeClass("hidden");
-		});
+		google.maps.event.addListener(marker, 'click', returnDiv(marker));
 		
 		markerArray.push(marker);
 	}	
 }
 
+function returnDiv(marker){
+	return function(){
+		var selector = marker.team.name.toLowerCase().replace(/\s/g,'').replace(/\./g,"");
+		$("#"+selector).modal('toggle');
+	};
+}
 function createDivTeam (team){
-	var div = $('<div id = "'+team.name.toLowerCase().replace(/\s/g,'')+'" class="hidden div-info"></div>');
-	$('body').append(div);
+	var selector = team.name.toLowerCase().replace(/\s/g,'').replace(/\./g,"")
+	var wrapper = $('<div id = "'+selector+'" class="modal fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>');
+	var dialog = $('<div class="modal-dialog" ></div>');
+	var content = $('<div class="modal-content"></div>');
+	var header = $('<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 class="modal-title" id="myModalLabel">'+team.name+'</h3></div>');
+	var body = $('<div class="modal-body">'+
+					'<div class="container">'+
+						'<div class="row">'+
+							'<div class="col-md-4">'+
+								'<p><strong>Ciudad: </strong>'+team.town+'</p>'+
+								'<p><strong>Día de juego: </strong>'+team.gameday+'</p>'+
+								'<p><strong>Hora de juego: </strong>'+team.gamehour+'</p>'+
+								'<p><strong>Coordenadas: </strong>'+team.location+'</p>'+
+							'</div>'+
+							'<div class="col-md-4">'+
+//								'<h4>Hello world!</h4>'+
+							'</div>'+
+							'<div class="col-md-4">'+
+//								'<h4>Hello world!</h4>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				 '</div>');
+	content.append(header);
+	content.append(body);
+	dialog.append(content);
+	wrapper.append(dialog);
+	$('body').append(wrapper);
 }
 function actTeam(){
 	var idliga = $("#league_select option:selected").attr("value");

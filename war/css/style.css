@@ -11,12 +11,16 @@
 	position:absolute;
 	top: 50px;
 	left: 160px;
-	z-index: 3000;
+	z-index: 1000;
 	width: 48px;
 	height: 48px;
+}
 
-#div-info{
-	position: absolute;
-	width: 100%;
-	height: 100%;
+@media (min-width: 768px){
+	.modal-dialog{
+		width:1000px;
+	}
+}
+.border-bottom{
+	border-bottom: 1px solid #e5e5e5;
 }
