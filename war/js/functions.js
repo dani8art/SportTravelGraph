@@ -63,21 +63,36 @@ function createDivTeam (team){
 	var wrapper = $('<div id = "'+selector+'" class="modal fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>');
 	var dialog = $('<div class="modal-dialog" ></div>');
 	var content = $('<div class="modal-content"></div>');
-	var header = $('<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 class="modal-title" id="myModalLabel">'+team.name+'</h3></div>');
+	var header = $('<div class="modal-header">'+
+			'<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>'+
+			'<img class="img-escudo img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
+			'<h3 class="modal-title" id="myModalLabel" style="display:inline;">'+team.name+'</h3></div>');
 	var body = $('<div class="modal-body">'+
 					'<div class="container">'+
 						'<div class="row">'+
 							'<div class="col-md-4">'+
-								'<p><strong>Ciudad: </strong>'+team.town+'</p>'+
-								'<p><strong>Día de juego: </strong>'+team.gameday+'</p>'+
-								'<p><strong>Hora de juego: </strong>'+team.gamehour+'</p>'+
-								'<p><strong>Coordenadas: </strong>'+team.location+'</p>'+
+								'<div class="panel panel-primary">'+
+									'<div class="panel-heading">'+
+										'<h3 class="panel-title">Información del equipo</h3>'+
+									'</div>'+
+									'<div class="panel-body">'+
+										'<p><strong>Ciudad: </strong>'+team.town+'</p>'+
+										'<p><strong>Día de juego: </strong>'+team.gameday+'</p>'+
+										'<p><strong>Hora de juego: </strong>'+team.gamehour+'</p>'+
+										'<p><strong>Coordenadas: </strong>'+team.location+'</p>'+
+									'</div>'+
+								'</div>'+
 							'</div>'+
-							'<div class="col-md-4">'+
-//								'<h4>Hello world!</h4>'+
-							'</div>'+
-							'<div class="col-md-4">'+
-//								'<h4>Hello world!</h4>'+
+							'<div class="col-md-8">'+
+								'<div class="panel panel-primary">'+
+									'<div class="panel-heading">'+
+										'<h3 class="panel-title">Imagenes</h3>'+
+									'</div>'+
+									'<div class="panel-body">'+
+										'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
+										'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+								
+									'</div>'+
+								'</div>'+
 							'</div>'+
 						'</div>'+
 					'</div>'+

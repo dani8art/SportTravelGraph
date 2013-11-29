@@ -24,3 +24,14 @@
 .border-bottom{
 	border-bottom: 1px solid #e5e5e5;
 }
+.img-galeria {
+	width:140px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.img-escudo {
+	display:inline;
+	width:60px;
+	margin-right: 10px;
+	cursor: pointer;
+}
