@@ -65,7 +65,7 @@ function createDivTeam (team){
 	var content = $('<div class="modal-content"></div>');
 	var header = $('<div class="modal-header">'+
 			'<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>'+
-			'<img class="img-escudo img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
+			'<img class="img-escudo img-thumbnail img-responsive" src ="img/noDisponible.jpg" title="Escudo"/>'+
 			'<h3 class="modal-title" id="myModalLabel" style="display:inline;">'+team.name+'</h3></div>');
 	var body = $('<div class="modal-body">'+
 					'<div class="container">'+
@@ -89,8 +89,23 @@ function createDivTeam (team){
 										'<h3 class="panel-title">Imagenes</h3>'+
 									'</div>'+
 									'<div class="panel-body">'+
-										'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
-										'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+								
+										'<div class="row">'+
+											'<div class="col-md-4">'+
+												'<p class="img-title"><strong>Titulo de la imagen</strong></p>'+
+												'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
+												'<p class="description">descripcion de la img</p>'+
+											'</div>'+
+											'<div class="col-md-4">'+
+												'<p class="img-title"><strong>Titulo de la imagen</strong></p>'+
+												'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
+												'<p class="description">descripcion de la img</p>'+
+											'</div>'+
+											'<div class="col-md-4">'+
+												'<p class="img-title"><strong>Titulo de la imagen</strong></p>'+
+												'<img class="img-galeria img-thumbnail img-responsive" src ="img/noDisponible.jpg"/>'+
+												'<p class="description">descripcion de la img</p>'+
+											'</div>'+
+										'</div>'+
 									'</div>'+
 								'</div>'+
 							'</div>'+
